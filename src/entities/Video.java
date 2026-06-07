@@ -1,8 +1,10 @@
 package entities;
 import Interfaces.Riproducibile;
+import Interfaces.RegolaVolume;
+import Interfaces.RegolaLuminosita;
 
 // Anche Video, come Audio estende Multimedia (per il titolo) e implementa Riproducibile (per il play) che però andrò a sovrascrivere in quanto qui ho un ulteriore parametro.
-public class Video extends Multimedia implements Riproducibile {
+public class Video extends Multimedia implements Riproducibile, RegolaVolume, RegolaLuminosita {
     private int durata;
     private int volume;
     private int luminosita;
@@ -18,27 +20,31 @@ public class Video extends Multimedia implements Riproducibile {
         this.luminosita = luminositaIniziale;
     }
 
-    // stessa cosa fatta per audio
+    @Override
     public void alzaVolume() {
         volume = volume + 1;
     }
 
+    @Override
     public void abbassaVolume() {
         if (volume > 0) {
             volume = volume - 1;
         }
     }
 
-    //  gestione Luminosità solo per video al momento
+    // Spazio per i metodi della Luminosità (Interfaccia RegolaLuminosita)
+    @Override
     public void aumentaLuminosita() {
         luminosita = luminosita + 1;
     }
 
+    @Override
     public void diminuisciLuminosita() {
         if (luminosita > 0) {
             luminosita = luminosita - 1;
         }
     }
+
 
     // Il metodo play() del Video deve stampare sia il volume (!) che la luminosità (*), per cui riscrivo il metodo play personalizzandolo
     @Override

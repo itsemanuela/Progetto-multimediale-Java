@@ -22,9 +22,9 @@ public class Main {
 
         //test video come per audio, stesso ragionamento. Ho importato nel main il package entities.Video e gli ho passato semplicemente i parametri coi miei valori. Come si può notare dall'esecuzione ottengo il risultato desiderato.
         Video mioVideo= new Video("Video", 6, 5, 1);
-        mioVideo.alzaVolume();
-        mioVideo.aumentaLuminosita();
-        mioVideo.play();
+       mioVideo.aumentaLuminosita();
+       mioVideo.diminuisciLuminosita();
+       mioVideo.play();
 
         //Testo anche la funzionalità dello scanner
         System.out.println("Inserisci il NUMERO del titolo del film che vuoi riprodurre da 1 a 5 ");
@@ -56,3 +56,4 @@ public class Main {
         }
     }
 }
+
