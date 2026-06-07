@@ -1,13 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import entities.Multimedia;
+import java.util.Scanner;
+import entities.Audio;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+
+// L'array di tipo Multimedia[] (che è il papà comune),può ospitare contemporaneamente oggetti diversi (Audio, Video e Immagini). (Polimorfismo)
+        Multimedia[] elementi = new Multimedia[5];
+
+        System.out.println("CONFIGURAZIONE LETTORE MULTIMEDIALE");
+
+        //Test audio
+        Audio mioAudio = new Audio("Canzone", 3, 4);
+        mioAudio.alzaVolume();
+        mioAudio.play();
+
+        //Funziona correttamente percè ho stampato il titolo per 3 volte che sarebbe la durata, mi stampa 5 punti escalamtivi perchè ho incrementato di 1 nella class Audio.
+
     }
 }
