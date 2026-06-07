@@ -1,3 +1,4 @@
+import entities.Immagine;
 import entities.Multimedia;
 import java.util.Scanner;
 import entities.Audio;
@@ -26,7 +27,7 @@ public class Main {
        mioVideo.diminuisciLuminosita();
        mioVideo.play();
 
-        //Testo anche la funzionalità dello scanner
+        //Testo anche la funzionalità dello scanner ma questo switch non era richiesto.
         System.out.println("Inserisci il NUMERO del titolo del film che vuoi riprodurre da 1 a 5 ");
         int titoloFilm=scanner.nextInt();
 
@@ -54,6 +55,15 @@ public class Main {
                         System.out.println("Grazie! Prenderemo in considerazione " + filmConsigliato);
                         break;
         }
+
+
+        //Immagini
+        Immagine immagine = new Immagine("Mare", 5);
+        Immagine immagine2 = new Immagine("Natale", 2);
+        immagine.show();
+        immagine2.show();
     }
+
+
 }
 
